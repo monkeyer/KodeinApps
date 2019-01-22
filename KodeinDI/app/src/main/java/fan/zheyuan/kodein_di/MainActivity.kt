@@ -1,6 +1,8 @@
 package fan.zheyuan.kodein_di
 
+import android.content.Context
 import android.os.Bundle
+import android.os.Vibrator
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import fan.zheyuan.kodein_di.coffee.Coffee
@@ -31,6 +33,8 @@ class MainActivity : AppCompatActivity(), KodeinAware {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
         if (savedInstanceState == null) {
             logger.log("Going to brew coffee using $coffeeMaker")

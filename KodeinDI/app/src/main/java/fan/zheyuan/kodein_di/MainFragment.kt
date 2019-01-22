@@ -17,6 +17,8 @@ import org.kodein.di.generic.instance
 class MainFragment : Fragment(), KodeinAware {
     override val kodein by closestKodein()
 
+//    override val kodeinTrigger = KodeinTrigger()
+
     val coffeeMaker: Kettle<Coffee> by instance()
 
     val logger: Logger by instance()
@@ -25,15 +27,17 @@ class MainFragment : Fragment(), KodeinAware {
         super.onCreate(savedInstanceState)
 
         logger.log("Fragment onCreate!")
+//        kodeinTrigger.trigger()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        logger.log("Fragment onCreateView!")
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        logger.log("Fragment onViewCreated!")
 
         logger.callback = {
             text?.text = logger.text
