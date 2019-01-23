@@ -24,7 +24,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"/>
 
     <EditText
             android:id="@+id/editText_quote"
@@ -80,6 +80,6 @@
             app:layout_constraintStart_toEndOf="@+id/editText_quote"
             app:layout_constraintTop_toTopOf="@+id/editText_quote"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent="0.25" />
+            app:layout_constraintWidth_percent="0.25"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

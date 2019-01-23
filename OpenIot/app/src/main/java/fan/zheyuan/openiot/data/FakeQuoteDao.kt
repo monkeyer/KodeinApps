@@ -8,11 +8,15 @@ class FakeQuoteDao {
     private val quotes = MutableLiveData<List<Quote>>()
 
     init {
-        quotes.value = quoteList
+        refresh()
     }
 
     fun addQuote(quote: Quote) {
         quoteList.add(quote)
+        refresh()
+    }
+
+    private fun refresh() {
         quotes.value = quoteList
     }
 
